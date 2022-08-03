@@ -25,7 +25,7 @@ const Navbar = () => {
         <Toolbar>
           {isMatch ? (
             <>
-              <Typography>SHOPEE</Typography>
+              <Typography sx={{fontSize: "1.5rem", paddingLeft: "10%"}}>SHOPEE</Typography>
               <DrawerC />
             </>
           ) : (
