@@ -11,14 +11,15 @@ import {
 } from "@mui/material";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import DrawerC from "./Drawer";
-const PAGES =["Products","Services","About us","contact us"]
+import { Link } from 'react-router-dom';
+const PAGES =["Product","Services","About us","contact us"]
 
 const Navbar = () => {
   const [value, setValue] = useState();
   const theme = useTheme();
   // console.log(theme)
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
-  console.log(isMatch);
+  console.log("my name is musa");
   return (
     <React.Fragment>
       <AppBar sx={{ background: "#063970" }}>
@@ -30,13 +31,15 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <ShoppingCartCheckoutIcon />
+             <Link to="/" style={{ textDecoration: 'none', color:"black" }}> <ShoppingCartCheckoutIcon  /> </Link>
               <Tabs
                 textColor="inherit"
                 value={value}
                 onChange={(e, value) => setValue(value)}
                 indicatorColor="secondary"
               >
+                <Tab  label="products" to='/products' component={Link}/>
+
                 {
                   PAGES.map((page,index)=>(
                 <Tab key={index} label={page} />
